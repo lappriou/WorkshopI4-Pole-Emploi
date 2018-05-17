@@ -27,7 +27,7 @@ namespace WorkshopI4.IHMWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSignalR();
-            var sqlConnectionString = "User ID=protesco;Password=P@$$w0rd;Host=51.15.20.24;Port=443;Database=workshopI4;Pooling=true;";
+            var sqlConnectionString = Environment.GetEnvironmentVariable("connectionStringPostgreSql");
 
             services.AddDbContext<WorkshopI4PostgreSqlContext>(options =>
                 options.UseNpgsql(
